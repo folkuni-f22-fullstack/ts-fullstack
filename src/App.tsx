@@ -1,12 +1,14 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 import { books } from './data/books.ts'
 import BookList from './components/BookList.tsx';
+
 
 type Action = () => void;
 
 function App() {
 	const [count, setCount] = useState<number>(0)
+	const inputRef = useRef<null | HTMLInputElement>(null)
 
 	const handleIncrease: Action = () => {
 		setCount(count + 1)
@@ -29,7 +31,11 @@ function App() {
 				<p> The count is: {count} </p>
 				<button onClick={handleIncrease}> Increase </button>
 				<button onClick={handlePrint}> Print something </button>
-				<input onChange={handleSearchChange} type="text" placeholder="Search" />
+				
+				<input onChange={handleSearchChange}
+					ref={inputRef}
+					type="text"
+					placeholder="Search" />
 			</section>
 			<BookList data={books} />
 		</main>

@@ -1,4 +1,4 @@
-import { Book } from '../data/books'
+import { Book } from './books'
 
 // Skapa ett interface/typalias som beskriver innehållet i props
 type Props = {

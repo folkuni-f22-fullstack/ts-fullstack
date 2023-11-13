@@ -1,0 +1,8 @@
+.memelist {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.memelist img {
+	width: 10em;
+}
